@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Verificar estructura de directorios
       run: |
@@ -28,6 +28,14 @@ jobs:
     - name: Install dependencies
       run: |
         npm install
+
+    - name: Ensure executable permissions
+      run: |
+        chmod -R 755 ./node_modules/.bin
+
+    - name: Verify Jest installation
+      run: |
+        npx jest --version
 
     - name: Run tests
       run: |
