@@ -27,10 +27,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd holaMundo/DevOps
         npm install
 
     - name: Run tests
       run: |
-        cd holaMundo/DevOps
         npm test
